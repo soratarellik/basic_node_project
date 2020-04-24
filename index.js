@@ -32,7 +32,6 @@ async function getWeatherBroadcast(nbrJour , lon , lat ){
     console.log(apiRequest)
     try{  
         const weather = await axios.get(apiRequest)
-        console.log(weather.data.list);
         const weatherBroadcast = weather.data.list.map(dailyWeather =>{
             const timestamp = dailyWeather.dt*1000
            return { 
@@ -52,7 +51,7 @@ let lon = 2.48;
 let lat = 42.8;
 
 getWeatherBroadcast( nbrJour , lon , lat ).then((weatherResult)=>{
-    console.log(weatherResult.map(r=>r.prevision))
+    console.log(weatherResult.map(r=>r))
 })
 
 // 3. RENDU
