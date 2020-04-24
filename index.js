@@ -36,7 +36,7 @@ async function getWeatherBroadcast(nbrJour , lon , lat ){
             const timestamp = dailyWeather.dt*1000
            return { 
                date : moment(timestamp).format("DD/MM/YYYY") , 
-               prevision : dailyWeather.weather.description
+               prevision : dailyWeather.weather[0].description
             }
         })
         return weatherBroadcast
