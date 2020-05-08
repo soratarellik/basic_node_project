@@ -30,7 +30,7 @@ var http = require('http');
 
 function getDataWeather(latitude,longitude,nbJour,apiKey) {
     return new Promise((resolve, reject) => {
-        axios.get('http://api.openweathermap.org/data/2.5/forecast/daily?lat=35&lon=139&cnt=10&appid=10e295f3e3f3b5cdde7ea86fc5c6d5b2')
+        axios.get('http://api.openweathermap.org/data/2.5/forecast/daily?lat=${}&lon=${lon}&cnt=${nbrJour}&appid=${WEATHER_API_KEY')
             .then(response => {
                 resolve(response);
             }).catch(e => {
@@ -112,7 +112,7 @@ async function getWeatherBroadcast(latitude,longitude,nbJour) {
         const dateW = new Date();
         const weather = {
             date: moment(dateW).format("DD/MM/YYYY"),
-            prevision: "Temperature moyenne :" + convertKelvinToCelsius(daysWeather[i].temp.day) + ", Temperature min:" + convertKelvinToCelsius(daysWeather[i].temp.min) + ", Temperature max:" + convertKelvinToCelsius(daysWeather[i].temp.max) + ", Humidité : " +  daysWeather[i].humidity + ", Météo : " + daysWeather[i].weather[0].main + " Description :" + daysWeather[i].description
+            prevision: "Temperature moyenne :" + convertKelvinToCelsius(daysWeather[i].temp.day) + ", Temperature min:" + convertKelvinToCelsius(daysWeather[i].temp.min) + ", Temperature max:" + convertKelvinToCelsius(daysWeather[i].temp.max) + ", Humidité : " +  daysWeather[i].humidity + ", Météo : " + daysWeather[i].weather[0].main + " Description :" + daysWeather[i].weather[0].description
         }
         result.push(weather)
     }
