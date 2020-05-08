@@ -100,7 +100,7 @@ async function getWeatherBroadcast(latitude,longitude,nbJour) {
         ]
      };
 
-    object = await getDataWeather(latitude,longitude,nbJour,WEATHER_API_KEY);
+    // object = await getDataWeather(latitude,longitude,nbJour,WEATHER_API_KEY);
 
     
 
@@ -112,7 +112,7 @@ async function getWeatherBroadcast(latitude,longitude,nbJour) {
         const dateW = new Date();
         const weather = {
             date: moment(dateW).format("DD/MM/YYYY"),
-            prevision: "Temperature moyenne :" + convertKelvinToCelsius(daysWeather[i].temp.day) + ", Temperature min:" + convertKelvinToCelsius(daysWeather[i].temp.min) + ", Temperature max:" + convertKelvinToCelsius(daysWeather[i].temp.max) + ", Humidité : " +  daysWeather[i].humidity + ", Météo : " + daysWeather[i].weather[0].main + ""
+            prevision: "Temperature moyenne :" + convertKelvinToCelsius(daysWeather[i].temp.day) + ", Temperature min:" + convertKelvinToCelsius(daysWeather[i].temp.min) + ", Temperature max:" + convertKelvinToCelsius(daysWeather[i].temp.max) + ", Humidité : " +  daysWeather[i].humidity + ", Météo : " + daysWeather[i].weather[0].main + " Description :" + daysWeather[i].description
         }
         result.push(weather)
     }
