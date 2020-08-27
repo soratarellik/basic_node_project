@@ -31,3 +31,34 @@ const WEATHER_API_KEY = "10e295f3e3f3b5cdde7ea86fc5c6d5b2"
 // 3. RENDU
 // Vous effectuerez un push sur le repertoire distant à partir de la branche actuelle . "git push origin [le nom de votre branche]"
 
+
+function getWeatherBroadcast(nb_jours, position){
+	var cpt;
+	cpt = 0;
+	while (cpt < nb_jours){
+
+	}
+	return array;
+}
+
+var request = new XMLHttpRequest();
+
+request.open('GET', 'http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID={'+WEATHER_API_KEY+'}', true);
+request.onload = function () {
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response);
+
+  if (request.status >= 200 && request.status < 400) {
+    data.forEach((weather) => {
+      console.log(weather);
+    })
+  } else {
+    console.log('error');
+  }
+}
+
+request.send();
+
+
+//Récupérer les informations de la météo via l'API
+//Traitement des données et pour le nb_jours de prévision, afficher le tableau de retour demandé
