@@ -1,0 +1,27 @@
+{
+  "name": "quosenginev2",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "drop_bdd" : "cd scripts && node ./unmountDatabase.js",
+    "mount_bdd" : "cd scripts && node ./mountDatabase.js",
+    "update_bdd_description" : "cd scripts && node ./dataStructureMaker.js",
+    "drop_bdd_shared" : "cd scripts && NODE_ENV=shared node ./unmountDatabase.js",
+    "mount_bdd_shared" : "cd scripts && NODE_ENV=shared node ./mountDatabase.js",
+    "update_bdd_description_shared" : "cd scripts && NODE_ENV=shared node ./dataStructureMaker.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "events": "^3.3.0",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "knex": "^0.95.9",
+    "knex-schema-inspector": "^1.5.13",
+    "morgan": "~1.9.1",
+    "pg": "^8.7.1",
+    "pg-listen": "^1.7.0"
+  }
+}
