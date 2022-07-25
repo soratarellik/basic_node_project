@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/characters/count', (req, res, next) => { res.send({ message: 'ok' }) }/*getCharactersCount*/);
-router.get('/sentences/count', /*getSentencesCount*/);
+
+
+// c'est ici qu'il faut developper l'API se referer à la doc 
+
+router.get(/*Url de l'api  , Function */);
 
 
 module.exports = router;
