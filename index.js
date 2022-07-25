@@ -1,15 +1,11 @@
 const express = require('express');
 const http = require('http');
-const textRouter = require('./router/textRouter')
 const { normalizePort } = require('./expressHelper');
 const app = express();
 const port = normalizePort(8888);
 const server = http.createServer(app);
 
-
-
-
-
+const textRouter = require('./router/textRouter')
 
 // Test d'aptitude JavaScript société QUOS \\
 
@@ -28,9 +24,13 @@ const server = http.createServer(app);
 
 
 
-app.set('port', port);
+//CONFIGURATION
+app.set('port', port); //défini le port d'écoute du serveur ici 8888
 app.use(express.json()); // permet à express de lire et envoyer du JSON 
 
+
+
+// TEXT API 
 app.use('/text', textRouter); // base de l'API racine /text les sous URL sont a develloper dans le fichier ./router/textRouter.js
 
 
@@ -38,3 +38,4 @@ app.use('/text', textRouter); // base de l'API racine /text les sous URL sont a 
 server.listen(port);
 
 
+module.exports = app;
